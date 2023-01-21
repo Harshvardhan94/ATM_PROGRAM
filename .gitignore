@@ -1,23 +1,45 @@
-# Compiled class file
-*.class
+#include <stdio.h>
+#include <conio.h>
 
-# Log file
-*.log
+int main()
+{
+    int n, i, pos;
+    int arr[40];
+    
+    // ---> size of array 
+    
+    printf("enter the size of array :- ");
+    scanf("%d", &n);
+    
+   // ---> element of array
+   
+    printf("enter the number of array");
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    printf("\n");
+    
+    //---> enter the postition which element delete
 
-# BlueJ files
-*.ctxt
+    printf("enter the postistion : ");
+    scanf("%d", &pos);
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+    if (pos >= n)
+    {
+        printf("deletion is not possible");
+    }
+    else
+    {
+    // --> Remove & shift the element 
+        for (i = pos; i < n - 1; i++)
+            arr[i] = arr[i + 1];
+        n--;
+        
+        // ---> print update array 
+        
+        for (i = 0; i < n; i++)
+            printf("%d \n", arr[i]);
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+            return 0;
+        
+    }
+}
